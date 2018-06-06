@@ -1,0 +1,31 @@
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "Edit Doc", edit_doc_path, class: "btn btn-primary" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+    <thead>.
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Download Link</th>
+        </tr>
+   </thead>
+   
+   <tbody>
+            <tr>
+                <td><%= @doc.name %></td>
+                <td><%= @doc.description %></td>
+                <td><%= link_to "Download doc", @doc.attachment_url %></td>
+             </tr>     
+
+   </tbody>
+   
+</table>
